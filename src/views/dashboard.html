@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>BarberManager - Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="logo">
+            <h2>Barber<span>PRO</span></h2>
+        </div>
+        <nav>
+            <a href="#" class="active"><i class="fas fa-home"></i> Início</a>
+            <a href="#"><i class="fas fa-calendar-alt"></i> Agenda Geral</a>
+            <a href="#"><i class="fas fa-cut"></i> Serviços</a>
+            <a href="#"><i class="fas fa-chart-line"></i> Financeiro</a>
+            <a href="#"><i class="fas fa-cog"></i> Configurações</a>
+        </nav>
+        <div class="user-info">
+            <img src="https://via.placeholder.com/40" alt="Admin">
+            <div>
+                <p>Gabriel Lins</p>
+                <span>Administrador</span>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <header>
+            <h1>Bem-vindo, <span>Gabriel</span></h1>
+            <button class="btn-add"><i class="fas fa-plus"></i> Novo Barbeiro</button>
+        </header>
+
+        <section class="stats-container">
+            <div class="stat-card">
+                <i class="fas fa-dollar-sign"></i>
+                <div>
+                    <span>Hoje</span>
+                    <h3>R$ 450,00</h3>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <div>
+                    <span>Agendamentos</span>
+                    <h3>12</h3>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <span>Próximo</span>
+                    <h3>14:30</h3>
+                </div>
+            </div>
+        </section>
+
+        <h2>Nossa Equipe</h2>
+        <section class="barber-grid">
+            <div class="barber-card" onclick="abrirAgenda(1)">
+                <div class="barber-img">
+                    <img src="https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?auto=format&fit=crop&q=80&w=200" alt="Barbeiro">
+                </div>
+                <h3>Ricardo Silva</h3>
+                <p>Cabelo & Barba</p>
+                <div class="status online">Disponível</div>
+            </div>
+
+            <div class="barber-card" onclick="abrirAgenda(2)">
+                <div class="barber-img">
+                    <img src="https://images.unsplash.com/photo-1618077360395-f3068be8e001?auto=format&fit=crop&q=80&w=200" alt="Barbeiro">
+                </div>
+                <h3>Marcos Souza</h3>
+                <p>Especialista em Degradê</p>
+                <div class="status busy">Em atendimento</div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function abrirAgenda(id) {
+            console.log("Abrindo agenda do barbeiro:", id);
+            // Aqui faremos a lógica de trocar a tela depois
+        }
+    </script>
+</body>
+</html>

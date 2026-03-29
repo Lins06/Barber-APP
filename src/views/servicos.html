@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Serviços - BarberPRO</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo"><h2>Barber<span>PRO</span></h2></div>
+        <nav>
+            <a href="dashboard.html"><i class="fas fa-home"></i> Início</a>
+            <a href="agenda.html"><i class="fas fa-calendar-alt"></i> Agenda</a>
+            <a href="#" class="active"><i class="fas fa-cut"></i> Serviços</a>
+            <a href="financeiro.html"><i class="fas fa-chart-line"></i> Financeiro</a>
+            <a href="config.html"><i class="fas fa-cog"></i> Configurações</a>
+        </nav>
+    </div>
+
+    <main class="main-content">
+        <header>
+            <h1>Menu de <span>Serviços</span></h1>
+            <button class="btn-add"><i class="fas fa-plus"></i> Novo Serviço</button>
+        </header>
+
+        <section class="barber-grid">
+            <div class="barber-card" style="text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <i class="fas fa-cut" style="color: var(--accent); font-size: 24px;"></i>
+                    <span style="font-weight: bold; color: #28a745;">R$ 45,00</span>
+                </div>
+                <h3 style="margin: 15px 0 5px 0;">Corte Degradê</h3>
+                <p style="font-size: 13px; color: var(--text-muted);">Duração: 40 min</p>
+                <div style="margin-top: 15px; display: flex; gap: 10px;">
+                    <button class="btn-add" style="padding: 5px 10px; background: #333; font-size: 12px;">Editar</button>
+                    <button class="btn-add" style="padding: 5px 10px; background: #800; font-size: 12px;">Excluir</button>
+                </div>
+            </div>
+
+            <div class="barber-card" style="text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <i class="fas fa-razor" style="color: var(--accent); font-size: 24px;"></i>
+                    <span style="font-weight: bold; color: #28a745;">R$ 35,00</span>
+                </div>
+                <h3 style="margin: 15px 0 5px 0;">Barba Terapia</h3>
+                <p style="font-size: 13px; color: var(--text-muted);">Duração: 30 min</p>
+                <div style="margin-top: 15px; display: flex; gap: 10px;">
+                    <button class="btn-add" style="padding: 5px 10px; background: #333; font-size: 12px;">Editar</button>
+                    <button class="btn-add" style="padding: 5px 10px; background: #800; font-size: 12px;">Excluir</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Configurações - BarberPRO</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo"><h2>Barber<span>PRO</span></h2></div>
+        <nav>
+            <a href="dashboard.html" class="active"><i class="fas fa-home"></i> Início</a>
+            <a href="agenda.html"><i class="fas fa-calendar-alt"></i> Agenda Geral</a>
+            <a href="servicos.html"><i class="fas fa-cut"></i> Serviços</a>
+            <a href="financeiro.html"><i class="fas fa-chart-line"></i> Financeiro</a>
+            <a href="config.html"><i class="fas fa-cog"></i> Configurações</a>
+        </nav>
+    </div>
+
+    <main class="main-content">
+        <header>
+            <h1>Gerenciar <span>Barbearia</span></h1>
+        </header>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+            <section>
+                <h2><i class="fas fa-cut"></i> Tabela de Preços</h2>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Serviço</th>
+                            <th>Preço</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Corte Social</td>
+                            <td>R$ 35,00</td>
+                            <td><i class="fas fa-trash" style="color: #dc3545; cursor:pointer;"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn-add" style="margin-top: 15px; width: 100%;">+ Adicionar Serviço</button>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-users"></i> Equipe</h2>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Login</th>
+                            <th>Nível</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gabriel Admin</td>
+                            <td>gabriel_admin</td>
+                            <td><span class="service-tag">Admin</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn-add" style="margin-top: 15px; width: 100%;">+ Novo Acesso</button>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

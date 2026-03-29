@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda - BarberPRO</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo"><h2>Barber<span>PRO</span></h2></div>
+        <nav>
+            <a href="dashboard.html"><i class="fas fa-home"></i> Início</a>
+            <a href="agenda.html" class="active"><i class="fas fa-calendar-alt"></i> Agenda Geral</a>
+            <a href="servicos.html"><i class="fas fa-cut"></i> Serviços</a>
+            <a href="financeiro.html"><i class="fas fa-chart-line"></i> Financeiro</a>
+            <a href="config.html"><i class="fas fa-cog"></i> Configurações</a>
+        </nav>
+    </div>
+
+    <main class="main-content">
+        <header>
+            <h1>Agenda: <span id="nomeBarbeiro">Barbeiro Geral</span></h1>
+            <div style="display: flex; gap: 10px;">
+                <input type="date" id="dataAgenda" class="btn-add" style="background: #252525; color: white;">
+                <button class="btn-add" id="btnNovoHorario"><i class="fas fa-plus"></i> Novo Horário</button>
+            </div>
+        </header>
+
+        <section class="agenda-container" id="agenda-lista">
+            <p style="text-align:center; color:#666; margin-top: 50px;">Carregando agendamentos...</p>
+        </section>
+    </main>
+
+    <div id="modalAgendamento" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); align-items:center; justify-content:center; z-index:1000; padding: 20px;">
+        <div style="width:100%; max-width:420px; background: linear-gradient(135deg, #1e1e1e 0%, #252525 100%); border: 2px solid var(--accent); border-radius: 10px; padding: 30px; box-shadow: 0 8px 32px rgba(0,0,0,0.5);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 25px;">
+                <i class="fas fa-calendar-check" style="color: var(--accent); font-size: 24px;"></i>
+                <h2 style="margin: 0; color: var(--accent); font-size: 22px;">Novo Agendamento</h2>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <label style="font-size: 13px; color: #bbb; font-weight: 600; display: block; margin-bottom: 8px;">👤 Nome do Cliente <span style="color: var(--accent);">*</span></label>
+                <input type="text" id="inputCliente" placeholder="Ex: Gabriel Lins" style="width: 100%; box-sizing: border-box; background: #121212; border: 2px solid #333; color: white; padding: 12px; border-radius: 6px; font-size: 14px; transition: border-color 0.3s;" onFocus="this.style.borderColor='var(--accent)'" onBlur="this.style.borderColor='#333'">
+                <span id="erroCliente" style="font-size: 11px; color: #ff6b6b; display: none; margin-top: 4px;"></span>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <label style="font-size: 13px; color: #bbb; font-weight: 600; display: block; margin-bottom: 8px;">�‍💼 Barbeiro <span style="color: var(--accent);">*</span></label>
+                <select id="inputBarbeiro" style="width: 100%; box-sizing: border-box; background: #121212; border: 2px solid #333; color: white; padding: 12px; border-radius: 6px; font-size: 14px; cursor: pointer; transition: border-color 0.3s;" onFocus="this.style.borderColor='var(--accent)'" onBlur="this.style.borderColor='#333'">
+                    <option value="" disabled selected>Selecione um barbeiro</option>
+                </select>
+                <span id="erroBarbeiro" style="font-size: 11px; color: #ff6b6b; display: none; margin-top: 4px;"></span>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <label style="font-size: 13px; color: #bbb; font-weight: 600; display: block; margin-bottom: 8px;">�📅 Data <span style="color: var(--accent);">*</span></label>
+                <input type="date" id="inputData" style="width: 100%; box-sizing: border-box; background: #121212; border: 2px solid #333; color: white; padding: 12px; border-radius: 6px; font-size: 14px; cursor: pointer; transition: border-color 0.3s;" onFocus="this.style.borderColor='var(--accent)'" onBlur="this.style.borderColor='#333'">
+                <span id="erroData" style="font-size: 11px; color: #ff6b6b; display: none; margin-top: 4px;"></span>
+            </div>
+            
+            <div style="margin-bottom: 25px;">
+                <label style="font-size: 13px; color: #bbb; font-weight: 600; display: block; margin-bottom: 8px;">🕐 Horário (24h) <span style="color: var(--accent);">*</span></label>
+                <input type="time" id="inputHora" style="width: 100%; box-sizing: border-box; background: #121212; border: 2px solid #333; color: white; padding: 12px; border-radius: 6px; font-size: 14px; cursor: pointer; transition: border-color 0.3s;" onFocus="this.style.borderColor='var(--accent)'" onBlur="this.style.borderColor='#333'">
+                <span id="erroHora" style="font-size: 11px; color: #ff6b6b; display: none; margin-top: 4px;"></span>
+            </div>
+            
+            <div style="display: flex; gap: 12px;">
+                <button id="btnSalvarAgendamento" style="flex: 1; padding: 12px; font-weight: 600; border: none; border-radius: 6px; cursor: pointer; background: var(--accent); color: black; transition: all 0.3s; font-size: 14px;">✓ Agendar</button>
+                <button id="btnFecharModal" style="flex: 1; padding: 12px; font-weight: 600; border: none; border-radius: 6px; cursor: pointer; background: #333; color: white; transition: all 0.3s; font-size: 14px;">✕ Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/agenda.js"></script>
+</body>
+</html>

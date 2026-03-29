@@ -13,11 +13,11 @@
             <h2>Barber<span>PRO</span></h2>
         </div>
         <nav>
-            <a href="#" class="active"><i class="fas fa-home"></i> Início</a>
-            <a href="#"><i class="fas fa-calendar-alt"></i> Agenda Geral</a>
-            <a href="#"><i class="fas fa-cut"></i> Serviços</a>
-            <a href="#"><i class="fas fa-chart-line"></i> Financeiro</a>
-            <a href="#"><i class="fas fa-cog"></i> Configurações</a>
+            <a href="dashboard.html" class="active"><i class="fas fa-home"></i> Início</a>
+            <a href="agenda.html"><i class="fas fa-calendar-alt"></i> Agenda Geral</a>
+            <a href="servicos.html"><i class="fas fa-cut"></i> Serviços</a>
+            <a href="financeiro.html"><i class="fas fa-chart-line"></i> Financeiro</a>
+            <a href="config.html"><i class="fas fa-cog"></i> Configurações</a>
         </nav>
         <div class="user-info">
             <img src="https://via.placeholder.com/40" alt="Admin">
@@ -39,52 +39,43 @@
                 <i class="fas fa-dollar-sign"></i>
                 <div>
                     <span>Hoje</span>
-                    <h3>R$ 450,00</h3>
+                    <h3 id="ganhosHoje">R$ 0,00</h3>
                 </div>
             </div>
             <div class="stat-card">
                 <i class="fas fa-users"></i>
                 <div>
                     <span>Agendamentos</span>
-                    <h3>12</h3>
+                    <h3 id="totalAgendamentos">0</h3>
                 </div>
             </div>
             <div class="stat-card">
                 <i class="fas fa-clock"></i>
                 <div>
                     <span>Próximo</span>
-                    <h3>14:30</h3>
+                    <h3 id="proximoHorario">--:--</h3>
                 </div>
             </div>
         </section>
 
         <h2>Nossa Equipe</h2>
-        <section class="barber-grid">
-            <div class="barber-card" onclick="abrirAgenda(1)">
-                <div class="barber-img">
-                    <img src="https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?auto=format&fit=crop&q=80&w=200" alt="Barbeiro">
-                </div>
-                <h3>Ricardo Silva</h3>
-                <p>Cabelo & Barba</p>
-                <div class="status online">Disponível</div>
-            </div>
-
-            <div class="barber-card" onclick="abrirAgenda(2)">
-                <div class="barber-img">
-                    <img src="https://images.unsplash.com/photo-1618077360395-f3068be8e001?auto=format&fit=crop&q=80&w=200" alt="Barbeiro">
-                </div>
-                <h3>Marcos Souza</h3>
-                <p>Especialista em Degradê</p>
-                <div class="status busy">Em atendimento</div>
-            </div>
+        <section class="barber-grid" id="barbeiros-container">
+            <p style="text-align:center; color:#666; margin-top: 50px;">Carregando barbeiros...</p>
         </section>
+
+        <div id="agendamentos-barbeiro" style="display: none; margin-top: 40px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2>Agendamentos de <span id="barbeiro-selecionado" style="color: var(--accent);">---</span></h2>
+                <button id="btnVoltar" style="background: #333; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 600;">
+                    ← Voltar
+                </button>
+            </div>
+            <section id="agendamentos-lista" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+                <p style="text-align:center; color:#666;">Nenhum agendamento encontrado</p>
+            </section>
+        </div>
     </main>
 
-    <script>
-        function abrirAgenda(id) {
-            console.log("Abrindo agenda do barbeiro:", id);
-            // Aqui faremos a lógica de trocar a tela depois
-        }
-    </script>
+    <script src="../js/dashboard.js"></script>
 </body>
 </html>

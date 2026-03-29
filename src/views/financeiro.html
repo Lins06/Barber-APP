@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Financeiro - BarberPRO</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo"><h2>Barber<span>PRO</span></h2></div>
+        <nav>
+            <a href="dashboard.html"><i class="fas fa-home"></i> Início</a>
+            <a href="agenda.html"><i class="fas fa-calendar-alt"></i> Agenda</a>
+            <a href="servicos.html"><i class="fas fa-cut"></i> Serviços</a>
+            <a href="#" class="active"><i class="fas fa-chart-line"></i> Financeiro</a>
+            <a href="config.html"><i class="fas fa-cog"></i> Configurações</a>
+        </nav>
+    </div>
+
+    <main class="main-content">
+        <header>
+            <h1>Relatório <span>Financeiro</span></h1>
+            <div>
+                <button class="btn-add" style="background: #252525; color: white; margin-right: 10px;">Este Mês</button>
+                <button class="btn-add"><i class="fas fa-download"></i> Exportar PDF</button>
+            </div>
+        </header>
+
+        <section class="stats-container">
+            <div class="stat-card">
+                <i class="fas fa-wallet"></i>
+                <div>
+                    <span>Faturamento Total</span>
+                    <h3 style="color: #28a745;">R$ 12.450,00</h3>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-hand-holding-usd"></i>
+                <div>
+                    <span>Comissões Pagas</span>
+                    <h3 style="color: #dc3545;">R$ 4.980,00</h3>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-piggy-bank"></i>
+                <div>
+                    <span>Lucro Líquido</span>
+                    <h3>R$ 7.470,00</h3>
+                </div>
+            </div>
+        </section>
+
+        <h2>Entradas Recentes</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Cliente</th>
+                    <th>Barbeiro</th>
+                    <th>Serviço</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>29/03/2026</td>
+                    <td>Marcos Oliveira</td>
+                    <td>Ricardo Silva</td>
+                    <td>Cabelo + Barba</td>
+                    <td>R$ 80,00</td>
+                </tr>
+                <tr>
+                    <td>29/03/2026</td>
+                    <td>Felipe Souza</td>
+                    <td>Marcos Souza</td>
+                    <td>Corte Social</td>
+                    <td>R$ 45,00</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
